@@ -1,4 +1,4 @@
-# **Sea Surface Temperature Anomaly Analysis**
+# <h1 align="center">**Sea Surface Temperature Anomaly Analysis**</h1> 
 
 A Python project using Sea Surface Temperature (SST) anomaly data from 1982 to 2024.
 
@@ -14,14 +14,36 @@ The dataset contains monthly Sea Surface Temperature anomaly observations from 1
 
 [Source: Copernicus Marine Service — Sea Surface Temperature](https://marine.copernicus.eu/ocean-climate-portal/sea-surface-temperature)
 
-| Variable | Description |
-|---|---|
-| `date` | Date of the observation |
-| `sst_anomaly` | Sea Surface Temperature anomaly (K) |
-| `year` | Year extracted from the date |
-| `month` | Month extracted from the date |
-| `rolling_12m` | 12-month rolling mean |
-| `period` | Predefined time period |
+<table align="center">
+  <tr>
+    <th>Variable</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>date</code></td>
+    <td>Date of the observation</td>
+  </tr>
+  <tr>
+    <td><code>sst_anomaly</code></td>
+    <td>Sea Surface Temperature anomaly (K)</td>
+  </tr>
+  <tr>
+    <td><code>year</code></td>
+    <td>Year extracted from the date</td>
+  </tr>
+  <tr>
+    <td><code>month</code></td>
+    <td>Month extracted from the date</td>
+  </tr>
+  <tr>
+    <td><code>rolling_12m</code></td>
+    <td>12-month rolling mean</td>
+  </tr>
+  <tr>
+    <td><code>period</code></td>
+    <td>Predefined time period</td>
+  </tr>
+</table>
 
 ## Analysis
 
@@ -32,12 +54,28 @@ The analysis also includes a monthly comparison, a 12-month rolling mean, and a 
 
 For the period comparison, the dataset was divided into:
 
-| Period | Years |
-|:---:|:---:|
-| 1 | 1982–1999 |
-| 2 | 2000–2009 |
-| 3 | 2010–2019 |
-| 4 | 2020–2024 |
+<table align="center">
+  <tr>
+    <th>Period</th>
+    <th>Years</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>1982–1999</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>2000–2009</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>2010–2019</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>2020–2024</td>
+  </tr>
+</table>
 
 Monthly observations were also classified as positive, negative or zero anomalies.
 
@@ -73,12 +111,28 @@ The main results are stored in `sst_summary.csv`. This section will be updated w
 
 ## Output Files
 
-| File | Description |
-|---|---|
-| `annual_sst_anomalies.csv` | Annual mean SST anomalies |
-| `monthly_sst_anomalies.csv` | Mean anomaly by calendar month |
-| `period_sst_anomalies.csv` | Mean anomaly by predefined period |
-| `sst_summary.csv` | Main statistical results |
+<table align="center">
+  <tr>
+    <th align="center">File</th>
+    <th align="center">Description</th>
+  </tr>
+  <tr>
+    <td align="center"><code>annual_sst_anomalies.csv</code></td>
+    <td align="center">Annual mean SST anomalies</td>
+  </tr>
+  <tr>
+    <td align="center"><code>monthly_sst_anomalies.csv</code></td>
+    <td align="center">Mean anomaly by calendar month</td>
+  </tr>
+  <tr>
+    <td align="center"><code>period_sst_anomalies.csv</code></td>
+    <td align="center">Mean anomaly by predefined period</td>
+  </tr>
+  <tr>
+    <td align="center"><code>sst_summary.csv</code></td>
+    <td align="center">Main statistical results</td>
+  </tr>
+</table>
 
 ## Scientific Context
 
@@ -96,18 +150,18 @@ _SciPy_ was used for linear regression and statistical analysis.
 
 ## Skills Demonstrated
 
-Python · Pandas · Data Cleaning · Exploratory Data Analysis · Time-Series Analysis · Statistics · Linear Regression · Data Visualisation · Scientific Data Analysis · Oceanographic Data
+Python - Pandas - Data Cleaning - Exploratory Data Analysis - Time-Series Analysis - Statistics - Linear Regression - Data Visualisation - Scientific Data Analysis - Oceanographic Data
 
 ## Project Status
 
-_Completed_ — Python analysis
+_Completed_ - Python analysis
 
 Next stage: SQL integration and Tableau dashboard.
 
 ## Author
 
-### **Mariana Gomes de Andrade Silva**
+### Mariana Gomes de Andrade Silva
 
 Oceanographic and environmental data analysis portfolio.
 
-**Interests: Oceanography · Geophysics · Climate Science · Remote Sensing · Geospatial Data · Scientific Programming · Data Analysis**
+**Interests: Oceanography - Geophysics - Climate Science - Remote Sensing - Geospatial Data - Scientific Programming - Data Analysis**
