@@ -1,16 +1,16 @@
 # <h1 align="center">**Sea Surface Temperature Anomaly Analysis**</h1> 
 
-A Python project using Sea Surface Temperature (SST) anomaly data from 1982 to 2024.
-
+A Python project using Sea Surface Temperature (SST) anomaly data from 1982 to 2024. 
+  
 The goal is to explore how SST anomalies vary over time, investigate long-term trends, and analyze patterns within an oceanographic dataset.
 
 ## Overview
 
-This project was developed as an introduction to oceanographic data analysis with Python. Monthly SST anomaly data were processed using Pandas, Matplotlib and SciPy for data preparation, statistical analysis, visualization and trend estimation.
+<div align="justify">This project was developed as an introduction to oceanographic data analysis with Python. Monthly SST anomaly data were processed using Pandas, Matplotlib and SciPy for data preparation, statistical analysis, visualization and trend estimation.</div>
 
 ## Dataset
 
-The dataset contains monthly Sea Surface Temperature anomaly observations from 1982 to 2024. The data were obtained from the Copernicus Marine Service Ocean Climate Portal.
+<div align="justify">The dataset contains monthly Sea Surface Temperature anomaly observations from 1982 to 2024. The data were obtained from the Copernicus Marine Service Ocean Climate Portal.</div>
 
 [Source: Copernicus Marine Service — Sea Surface Temperature](https://marine.copernicus.eu/ocean-climate-portal/sea-surface-temperature)
 
@@ -47,10 +47,13 @@ The dataset contains monthly Sea Surface Temperature anomaly observations from 1
 
 ## Analysis
 
-The first step was to prepare the dataset using Pandas. Dates were converted to datetime format, and year and month were extracted from the original date column.
-Basic statistics were calculated to obtain the mean, maximum and minimum SST anomalies. The monthly data were grouped by year to calculate the annual mean anomaly. These values were then used in a linear regression to estimate the overall trend from 1982 to 2024.
+<div align="justify">
+
+The first step was to prepare the dataset using Pandas. Dates were converted to datetime format, and year and month were extracted from the original date column. Basic statistics were calculated to obtain the mean, maximum and minimum SST anomalies. The monthly data were grouped by year to calculate the annual mean anomaly. These values were then used in a linear regression to estimate the overall trend from 1982 to 2024.
 
 The analysis also includes a monthly comparison, a 12-month rolling mean, and a comparison between different periods. The 10 years with the highest and lowest annual mean anomalies were also identified.
+
+</div>
 
 For the period comparison, the dataset was divided into:
 
@@ -107,7 +110,11 @@ Monthly SST anomalies together with the 12-month rolling mean.
 
 ## Key Findings
 
+<div align="justify">
+
 The main results are stored in `sst_summary.csv`. This section will be updated with the main findings from the analysis, including the overall trend, R², p-value, highest and lowest anomaly years, and differences between the selected periods.
+
+</div>
 
 ## Output Files
 
@@ -136,25 +143,26 @@ The main results are stored in `sst_summary.csv`. This section will be updated w
 
 ## Scientific Context
 
+<div align="justify">
+
 Sea Surface Temperature is an important variable in oceanography and climate studies. SST anomalies show how observed sea surface temperatures differ from a reference climatology. Studying these anomalies can help investigate changes in ocean conditions and their relationship with marine ecosystems, ocean circulation, climate variability and marine heatwaves.
+
+</div>
 
 ## Technologies
 
-_Python_ was used as the main programming language.
-
-_Pandas_ was used for data cleaning, transformation and organization.
-
-_Matplotlib_ was used to create the visualizations.
-
-_SciPy_ was used for linear regression and statistical analysis.
+- _Python_ was used as the main programming language.
+- _Pandas_ was used for data cleaning, transformation and organization.
+- _Matplotlib_ was used to create the visualizations.
+- _SciPy_ was used for linear regression and statistical analysis.
 
 ## Skills Demonstrated
 
-Python - Pandas - Data Cleaning - Exploratory Data Analysis - Time-Series Analysis - Statistics - Linear Regression - Data Visualisation - Scientific Data Analysis - Oceanographic Data
+<p align="center"><i>Python - Pandas - Data Cleaning - Exploratory Data Analysis - Time-Series Analysis - Statistics - Linear Regression - Data Visualisation - Scientific Data Analysis - Oceanographic Data</i></p>
 
 ## Project Status
 
-_Completed_ - Python analysis
+_Completed - Python analysis_
 
 Next stage: SQL integration and Tableau dashboard.
 
@@ -164,4 +172,4 @@ Next stage: SQL integration and Tableau dashboard.
 
 Oceanographic and environmental data analysis portfolio.
 
-**Interests: Oceanography - Geophysics - Climate Science - Remote Sensing - Geospatial Data - Scientific Programming - Data Analysis**
+<p align="center"><strong>Interests: Oceanography - Scientific Programming - Data Analysis</strong></p>
