@@ -221,8 +221,7 @@ warmest_month = monthly_mean.idxmax()
 
 # Find the month with the lowest mean anomaly
 coldest_month = monthly_mean.idxmin()
-
-# Print the results
+
 print("\nMonth with the highest mean anomaly:")
 print(warmest_month)
 
@@ -325,8 +324,7 @@ df["period"] = df["year"].apply(classify_period)
 
 # Calculate the mean anomaly for each period
 period_mean = df.groupby("period")["sst_anomaly"].mean()
-
-# Print the results
+
 print("\nMean SST anomaly by period:")
 print(period_mean)
 
@@ -344,8 +342,7 @@ negative_months = (
 zero_months = (
     df["sst_anomaly"] == 0
 ).sum()
-
-# Print the results
+
 print("\nAnomaly classification:")
 
 print(
@@ -404,9 +401,7 @@ for period in df["period"].unique():
 
     # Store the slope
     period_trends[period] = regression.slope
-
-
-# Print the results
+
 print("\nSST anomaly trend by period:")
 
 for period, slope in period_trends.items():
