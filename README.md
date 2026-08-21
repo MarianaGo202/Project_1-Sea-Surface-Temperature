@@ -231,13 +231,13 @@ This project focuses on the analysis and interpretation of the dataset rather th
 ## Technologies
 
 **Programming & Development**
-- _Python_ — main programming language
-- _Visual Studio Code (VS Code)_ — development environment
+- _Python_ - main programming language
+- _Visual Studio Code (VS Code)_ - development environment
 
 **Python Libraries**
-- _Pandas_ — data cleaning, transformation and organization
-- _Matplotlib_ — data visualization
-- _SciPy_ — linear regression and statistical analysis
+- _Pandas_ - data cleaning, transformation and organization
+- _Matplotlib_ - data visualization
+- _SciPy_ - linear regression and statistical analysis
 
 ## Skills Demonstrated
 
