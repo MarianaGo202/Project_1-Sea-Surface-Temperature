@@ -4,9 +4,9 @@
 
 <p align="justify">Developed as an introductory project in oceanographic data analysis, the study applies Python to a real scientific dataset, combining data preparation, exploratory analysis, statistical analysis, time-series processing, and data visualization.</p>
 
-_Development environment:_ Visual Studio Code  
-_Project status:_ Completed — Python analysis  
-_Next stage:_ SQL integration and Tableau dashboard
+**Development environment:** Visual Studio Code (VS Code)
+**Project status:** _Completed_ — Python analysis  
+**Next stage:** SQL integration and Tableau dashboard
 
 ## Objective
 
@@ -90,37 +90,37 @@ The dataset contains monthly Sea Surface Temperature anomaly observations from 1
 
 ## Methodology
 
-### Data Preparation
+**Data Preparation**
 
 <p align="justify">
 The original dataset was loaded with Pandas and prepared for analysis. The date variable was converted to datetime format, from which year and month were extracted. The dataset structure, data types, and missing values were also checked before the analysis.
 </p>
 
-### Annual Analysis
+**Annual Analysis**
 
 <p align="justify">
 Monthly observations were aggregated by year to calculate the annual mean SST anomaly. These annual values were subsequently used to identify the years with the highest and lowest mean anomalies and to estimate the long-term trend.
 </p>
 
-### Trend Analysis
+**Trend Analysis**
 
 <p align="justify">
 A linear regression was performed on the annual mean SST anomalies using <code>scipy.stats.linregress</code>. The regression provides the estimated trend together with R² and p-value, allowing the statistical relationship between year and SST anomaly to be evaluated.
 </p>
 
-### Monthly Analysis
+**Monthly Analysis**
 
 <p align="justify">
 The data were grouped by calendar month to examine monthly patterns in SST anomalies. Monthly observations were also classified according to their anomaly sign as positive, negative, or zero.
 </p>
 
-### Rolling Mean
+**Rolling Mean**
 
 <p align="justify">
 A 12-month rolling mean was calculated to reduce short-term variability and provide a clearer representation of longer-term changes in the time series.
 </p>
 
-### Period Comparison
+**Period Comparison**
 
 <p align="justify">
 The dataset was divided into four predefined periods. The mean SST anomaly was calculated for each period to facilitate comparison across different stages of the dataset.
@@ -151,7 +151,7 @@ The dataset was divided into four predefined periods. The mean SST anomaly was c
 
 ## Visualisations
 
-### Monthly SST Anomaly
+**Monthly SST Anomaly**
 
 <p align="justify">
 Monthly SST anomaly observations from 1982 to 2024.
@@ -161,7 +161,7 @@ Monthly SST anomaly observations from 1982 to 2024.
   <img src="sst_monthly_anomaly.png" alt="Monthly SST Anomaly" width="800">
 </p>
 
-### Annual SST Trend
+**Annual SST Trend**
 
 <p align="justify">
 Annual mean SST anomalies and the estimated linear regression trend.
@@ -171,7 +171,7 @@ Annual mean SST anomalies and the estimated linear regression trend.
   <img src="sst_annual_trend.png" alt="Annual SST Trend" width="800">
 </p>
 
-### 12-Month Rolling Mean
+**12-Month Rolling Mean**
 
 <p align="justify">
 Monthly SST anomalies together with the 12-month rolling mean.
@@ -241,12 +241,10 @@ This project focuses on the analysis and interpretation of the dataset rather th
 
 <p align="center"><i>Python - Pandas - Data Cleaning - Exploratory Data Analysis - Time-Series Analysis - Statistics - Linear Regression - Data Visualisation - Scientific Data Analysis - Oceanographic Data</i></p>
 
-## Project Development
-
-<p align="justify">This project represents the Python stage of an oceanographic data analysis portfolio. The next stage will integrate the processed dataset with SQL for data querying and analysis, followed by Tableau for the development of an interactive dashboard.</p>
-
 ## Author
 
 ### Mariana Gomes de Andrade Silva
+
+Oceanographic and environmental data analysis portfolio.
 
 <p align="center"><strong>Interests: Oceanography - Scientific Programming - Data Analysis</strong></p>
