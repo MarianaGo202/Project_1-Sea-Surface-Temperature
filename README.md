@@ -6,9 +6,9 @@
 
 **Development environment:** Visual Studio Code (VS Code)
 
-**Project status:** _Completed_ — Python analysis
+**Project status:** _Completed_ - Python analysis
 
-**Next stage:** SQL integration and Tableau dashboard
+**Next stage:** SQL and Power BI
 
 ## Objective
 
@@ -221,23 +221,27 @@ The generated CSV files provide the numerical results used throughout the analys
 ## Scientific Context
 
 <p align="justify">
-Sea Surface Temperature is an important variable in oceanography and climate science. SST anomalies represent differences between observed sea surface temperatures and a reference climatology. Their analysis can provide insight into changes in ocean conditions and their relationship with climate variability, ocean circulation, marine ecosystems, and events such as marine heatwaves.
+Sea Surface Temperature (SST) is an important variable in oceanography and climate science. SST anomalies represent differences between observed sea surface temperatures and a reference climatology, making them useful for identifying changes in ocean conditions and patterns of climate variability. Global sea surface temperatures have increased over recent decades. This warming can contribute to changes in marine ecosystems, ocean stratification, marine heatwaves, sea ice, and other ocean processes.
 </p>
 
 <p align="justify">
-This project focuses on the analysis and interpretation of the dataset rather than on establishing the physical causes of the observed anomalies.
+Understanding how SST anomalies vary over time can therefore provide insight into long-term changes in ocean conditions and their potential environmental implications. This project focuses on analyzing the temporal patterns and characteristics of SST anomalies between 1982 and 2024, including their long-term trend, annual and monthly variability, and differences between selected periods.
+</p>
+
+<p align="justify">
+The analysis focuses on the observed patterns within the dataset rather than on establishing the physical causes of the observed anomalies or directly quantifying their environmental impacts.
 </p>
 
 ## Technologies
 
 **Programming and Development**
-- _Python_ - main programming language
-- _Visual Studio Code (VS Code)_ - development environment
+- Python
+- Visual Studio Code (VS Code) 
 
 **Python Libraries**
-- _Pandas_ - data cleaning, transformation and organization
-- _Matplotlib_ - data visualization
-- _SciPy_ - linear regression and statistical analysis
+- Pandas 
+- Matplotlib 
+- SciPy 
 
 ## Skills Demonstrated
 
@@ -247,6 +251,6 @@ This project focuses on the analysis and interpretation of the dataset rather th
 
 ### Mariana Gomes de Andrade Silva
 
-Oceanographic and environmental data analysis portfolio.
+Introductory project in oceanographic data analysis using Python.
 
-<p align="center"><strong>Interests: Oceanography - Scientific Programming - Data Analysis</strong></p>
+<p align="center"><strong>Interests: Oceanography - Scientific Programming - Data Analysis - Environmental Data</strong></p>
