@@ -5,7 +5,9 @@
 <p align="justify">Developed as an introductory project in oceanographic data analysis, the study applies Python to a real scientific dataset, combining data preparation, exploratory analysis, statistical analysis, time-series processing, and data visualization.</p>
 
 **Development environment:** Visual Studio Code (VS Code)
-**Project status:** _Completed_ — Python analysis  
+
+**Project status:** _Completed_ — Python analysis
+
 **Next stage:** SQL integration and Tableau dashboard
 
 ## Objective
