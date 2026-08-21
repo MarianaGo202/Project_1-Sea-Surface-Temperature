@@ -230,7 +230,7 @@ This project focuses on the analysis and interpretation of the dataset rather th
 
 ## Technologies
 
-**Programming & Development**
+**Programming and Development**
 - _Python_ - main programming language
 - _Visual Studio Code (VS Code)_ - development environment
 
