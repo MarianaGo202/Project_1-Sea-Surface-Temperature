@@ -1,8 +1,8 @@
 # <h1 align="center">**Sea Surface Temperature Anomaly Analysis**</h1> 
 
-<p align="justify"> This project presents a Python-based analysis of Sea Surface Temperature (SST) anomaly data from 1982 to 2024. The analysis investigates temporal variability, long-term trends, seasonal patterns, and differences between selected periods.</p>
+<p align="justify"> This project presents a Python-based analysis of Sea Surface Temperature (SST) anomaly data from 1982 to 2024. The analysis investigates changes over time, long-term trends, seasonal patterns, and differences between the periods analyzed.</p>
 
-<p align="justify">Developed as an introductory project in oceanographic data analysis, the study applies Python to a real scientific dataset, combining data preparation, exploratory analysis, statistical analysis, time-series processing, and data visualization.</p>
+<p align="justify">Developed as an introductory project in oceanographic data analysis, the study uses Python to analyze a real scientific dataset, including data preparation, exploratory analysis, statistical analysis, time-series analysis, and data visualization.</p>
 
 **Development environment:** Visual Studio Code (VS Code)
 
@@ -12,7 +12,7 @@
 
 ## Objective
 
-<p align="justify">The objective of this project is to investigate how Sea Surface Temperature anomalies have changed between 1982 and 2024 and to apply a reproducible data analysis workflow to an oceanographic dataset.</p>
+<p align="justify">The objective of this project is to investigate how Sea Surface Temperature anomalies changed between 1982 and 2024 and apply a reproducible data analysis process to an oceanographic dataset.</p>
 
 The analysis addresses the following questions:
 
@@ -185,13 +185,9 @@ Monthly SST anomalies together with the 12-month rolling mean.
 
 ## Results
 
-<p align="justify">
-The main statistical results are stored in <code>sst_summary.csv</code>. The analysis includes the estimated long-term trend, R², p-value, highest and lowest annual mean anomalies, the 10 years with the highest and lowest annual means, and the mean anomaly for each predefined period.
-</p>
+<p align="justify">The main statistical results are stored in <code>sst_summary.csv</code>. The analysis includes the estimated long-term trend, R², p-value, highest and lowest annual mean anomalies, the 10 years with the highest and lowest annual means, and the mean anomaly for each predefined period.</p>
 
-<p align="justify">
-The generated CSV files provide the numerical results used throughout the analysis and allow the results to be reused in subsequent stages of the project.
-</p>
+<p align="justify">The generated CSV files allow the results to be reused in the next stages of the project, including SQL and Power BI.</p>
 
 ## Output Files
 
@@ -221,7 +217,7 @@ The generated CSV files provide the numerical results used throughout the analys
 ## Scientific Context
 
 <p align="justify">
-Sea Surface Temperature (SST) is an important variable in oceanography and climate science. SST anomalies represent differences between observed sea surface temperatures and a reference climatology, making them useful for identifying changes in ocean conditions and patterns of climate variability. Global sea surface temperatures have increased over recent decades. This warming can contribute to changes in marine ecosystems, ocean stratification, marine heatwaves, sea ice, and other ocean processes.
+Sea Surface Temperature (SST) is an important variable in oceanography and climate science. SST anomalies represent the difference between the observed temperature and a reference value and are used to identify changes in ocean conditions and climate variability.
 </p>
 
 <p align="justify">
@@ -229,7 +225,7 @@ Understanding how SST anomalies vary over time can therefore provide insight int
 </p>
 
 <p align="justify">
-The analysis focuses on the observed patterns within the dataset rather than on establishing the physical causes of the observed anomalies or directly quantifying their environmental impacts.
+This project focuses on analyzing the temporal patterns observed between 1982 and 2024, including long-term trends, annual and monthly variability, and differences between selected periods. The project aims to describe the patterns identified in the data without directly investigating their causes or their impacts on the environment.
 </p>
 
 ## Technologies
