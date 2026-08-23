@@ -225,7 +225,7 @@ Understanding how SST anomalies vary over time can therefore provide insight int
 </p>
 
 <p align="justify">
-This project focuses on analyzing the temporal patterns observed between 1982 and 2024, including long-term trends, annual and monthly variability, and differences between selected periods. The project aims to describe the patterns identified in the data without directly investigating their causes or their impacts on the environment.
+The project aims to describe the patterns identified in the data without directly investigating their causes or their impacts on the environment.
 </p>
 
 ## Technologies
