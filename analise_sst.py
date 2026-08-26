@@ -1,10 +1,6 @@
-# Import Pandas for data analysis
 import pandas as pd
-
-# Import Matplotlib for creating graphs
 import matplotlib.pyplot as plt
 
-# Import linear regression from SciPy
 from scipy.stats import linregress
 
 # Load the SST anomaly data from the CSV file
