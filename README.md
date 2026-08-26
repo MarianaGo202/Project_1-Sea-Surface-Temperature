@@ -228,7 +228,7 @@ Understanding how SST anomalies vary over time can therefore provide insight int
 The project aims to describe the patterns identified in the data without directly investigating their causes or their impacts on the environment.
 </p>
 
-## Technologies
+## Tools
 
 **Programming and Development**
 - Python
