@@ -1,415 +1,161 @@
 import pandas as pd
 import matplotlib.pyplot as plt
-
 from scipy.stats import linregress
 
-# Load the SST anomaly data from the CSV file
+# Load and clean data
 df = pd.read_csv("CSVExport.csv")
-
-# Remove extra spaces from column names
 df.columns = df.columns.str.strip()
-
-# Rename the data column to a simple and clear name
 df = df.rename(columns={"- values": "sst_anomaly"})
-
-# Convert the date column from text to datetime
 df["date"] = pd.to_datetime(df["date"])
-
-# Extract the year from each date
 df["year"] = df["date"].dt.year
-
-# Show the number of rows and columns
-print("Dataset size:")
-print(df.shape)
-
-# Show the column names
-print("\nColumns:")
-print(df.columns)
-
-# Show the first five rows
-print("\nFirst five rows:")
-print(df.head())
-
-# Show the data types
-print("\nData types:")
-print(df.dtypes)
-
-# Check for missing values
-print("\nMissing values:")
-print(df.isnull().sum())
-
-# Calculate the mean SST anomaly
-mean_anomaly = df["sst_anomaly"].mean()
-
-# Find the maximum SST anomaly
-max_anomaly = df["sst_anomaly"].max()
-
-# Find the minimum SST anomaly
-min_anomaly = df["sst_anomaly"].min()
-
-# Print the statistics
-print("\nSST anomaly statistics:")
-
-print("Mean anomaly:", mean_anomaly, "K")
-
-print("Maximum anomaly:", max_anomaly, "K")
-
-print("Minimum anomaly:", min_anomaly, "K")
-
-# Find the row with the highest SST anomaly
-highest_anomaly = df.loc[df["sst_anomaly"].idxmax()]
-
-# Find the row with the lowest SST anomaly
-lowest_anomaly = df.loc[df["sst_anomaly"].idxmin()]
-
-# Print the highest anomaly
-print("\nHighest SST anomaly:")
-print(highest_anomaly)
-
-# Print the lowest anomaly
-print("\nLowest SST anomaly:")
-print(lowest_anomaly)
-
-# Calculate the mean SST anomaly for each year
-annual_mean = df.groupby("year")["sst_anomaly"].mean()
-
-# Print the annual means
-print("\nAnnual mean SST anomalies:")
-print(annual_mean)
-
-# Calculate a linear regression using year and annual anomaly
-trend = linregress(
-    annual_mean.index,
-    annual_mean.values
-)
-
-# Calculate the total change across the study period
-total_change = (
-    trend.slope *
-    (annual_mean.index.max() - annual_mean.index.min())
-)
-
-# Print the trend results
-print("\nLinear trend:")
-
-print("Slope:", trend.slope, "K/year")
-
-print("R-squared:", trend.rvalue ** 2)
-
-print("P-value:", trend.pvalue)
-
-print("Estimated change:", total_change, "K")
-
-# Create a figure
-plt.figure(figsize=(12, 6))
-
-# Plot the monthly SST anomaly
-plt.plot(
-    df["date"],
-    df["sst_anomaly"],
-    label="Monthly SST anomaly"
-)
-
-# Add a horizontal line at zero
-plt.axhline(
-    0,
-    linestyle="--",
-    label="Zero anomaly"
-)
-
-# Add the x-axis label
-plt.xlabel("Date")
-
-# Add the y-axis label
-plt.ylabel("SST Anomaly (K)")
-
-# Add the graph title
-plt.title(
-    "Sea Surface Temperature Anomaly (1982–2024)"
-)
-
-# Add a legend
-plt.legend()
-
-# Add a grid
-plt.grid(True)
-
-# Save the graph as a high-resolution PNG
-plt.savefig(
-    "sst_monthly_anomaly.png",
-    dpi=300,
-    bbox_inches="tight"
-)
-
-# Display the graph
-plt.show()
-
-# Create a new figure
-plt.figure(figsize=(12, 6))
-
-# Plot the annual mean SST anomaly
-plt.plot(
-    annual_mean.index,
-    annual_mean.values,
-    label="Annual mean anomaly"
-)
-
-# Calculate the values predicted by the linear trend
-trend_line = (
-    trend.intercept
-    + trend.slope * annual_mean.index
-)
-
-# Plot the linear trend
-plt.plot(
-    annual_mean.index,
-    trend_line,
-    linestyle="--",
-    label="Linear trend"
-)
-
-# Add a horizontal zero reference line
-plt.axhline(
-    0,
-    linestyle="--",
-    label="Zero anomaly"
-)
-
-# Add the x-axis label
-plt.xlabel("Year")
-
-# Add the y-axis label
-plt.ylabel("Mean SST Anomaly (K)")
-
-# Add the graph title
-plt.title(
-    "Annual Mean Sea Surface Temperature Anomaly"
-)
-
-# Add a legend
-plt.legend()
-
-# Add a grid
-plt.grid(True)
-
-# Save the graph
-plt.savefig(
-    "sst_annual_trend.png",
-    dpi=300,
-    bbox_inches="tight"
-)
-
-# Display the graph
-plt.show()
-
-# Extract the month number from each date
 df["month"] = df["date"].dt.month
 
-# Calculate the mean anomaly for each calendar month
-monthly_mean = df.groupby("month")["sst_anomaly"].mean()
+print("Dataset size:", df.shape)
+print("\nColumns:", df.columns)
+print("\nFirst five rows:\n", df.head())
+print("\nData types:\n", df.dtypes)
+print("\nMissing values:\n", df.isnull().sum())
 
-# Print the monthly means
-print("\nMonthly mean SST anomalies:")
-print(monthly_mean)
+# Basic statistics
+mean_anomaly = df["sst_anomaly"].mean()
+max_anomaly = df["sst_anomaly"].max()
+min_anomaly = df["sst_anomaly"].min()
 
-# Find the month with the highest mean anomaly
-warmest_month = monthly_mean.idxmax()
+print("\nSST anomaly statistics:")
+print("Mean anomaly:", mean_anomaly, "K")
+print("Maximum anomaly:", max_anomaly, "K")
+print("Minimum anomaly:", min_anomaly, "K")
 
-# Find the month with the lowest mean anomaly
-coldest_month = monthly_mean.idxmin()
-
-print("\nMonth with the highest mean anomaly:")
-print(warmest_month)
+highest_anomaly = df.loc[df["sst_anomaly"].idxmax()]
+lowest_anomaly = df.loc[df["sst_anomaly"].idxmin()]
 
-print("\nMonth with the lowest mean anomaly:")
-print(coldest_month)
+print("\nHighest SST anomaly:\n", highest_anomaly)
+print("\nLowest SST anomaly:\n", lowest_anomaly)
 
-# Calculate a 12-month rolling mean
-df["rolling_12m"] = (
-    df["sst_anomaly"]
-    .rolling(window=12)
-    .mean()
-)
+# Annual trend
+# Average the monthly values into one number per year, then fit a linear regression to see whether SST anomaly is rising over time.
+annual_mean = df.groupby("year")["sst_anomaly"].mean()
 
-# Create a new figure
+print("\nAnnual mean SST anomalies:\n", annual_mean)
+
+trend = linregress(annual_mean.index, annual_mean.values)
+total_change = trend.slope * (annual_mean.index.max() - annual_mean.index.min())
+
+print("\nLinear trend:")
+print("Slope:", trend.slope, "K/year")
+print("R-squared:", trend.rvalue ** 2)
+print("P-value:", trend.pvalue)
+print("Estimated change:", total_change, "K")
+
+# Plot 1: monthly anomaly over time
 plt.figure(figsize=(12, 6))
-
-# Plot the original monthly anomalies
-plt.plot(
-    df["date"],
-    df["sst_anomaly"],
-    label="Monthly SST anomaly",
-    alpha=0.4
-)
-
-# Plot the 12-month rolling mean
-plt.plot(
-    df["date"],
-    df["rolling_12m"],
-    label="12-month rolling mean"
-)
-
-# Add the zero reference line
-plt.axhline(
-    0,
-    linestyle="--",
-    label="Zero anomaly"
-)
-
-# Add labels
+plt.plot(df["date"], df["sst_anomaly"], label="Monthly SST anomaly")
+plt.axhline(0, linestyle="--", label="Zero anomaly")
 plt.xlabel("Date")
 plt.ylabel("SST Anomaly (K)")
-
-# Add title
-plt.title(
-    "SST Anomaly and 12-Month Rolling Mean"
-)
-
-# Add legend
+plt.title("Sea Surface Temperature Anomaly (1982–2024)")
 plt.legend()
-
-# Add grid
 plt.grid(True)
-
-# Save the figure
-plt.savefig(
-    "sst_rolling_mean.png",
-    dpi=300,
-    bbox_inches="tight"
-)
-
-# Display the graph
+plt.savefig("sst_monthly_anomaly.png", dpi=300, bbox_inches="tight")
 plt.show()
 
-# Sort annual means from highest to lowest
-warmest_years = annual_mean.sort_values(
-    ascending=False
-).head(10)
+# Plot 2: annual mean with trend line
+plt.figure(figsize=(12, 6))
+plt.plot(annual_mean.index, annual_mean.values, label="Annual mean anomaly")
 
-# Sort annual means from lowest to highest
-coldest_years = annual_mean.sort_values(
-    ascending=True
-).head(10)
+trend_line = trend.intercept + trend.slope * annual_mean.index
+plt.plot(annual_mean.index, trend_line, linestyle="--", label="Linear trend")
+plt.axhline(0, linestyle="--", label="Zero anomaly")
+plt.xlabel("Year")
+plt.ylabel("Mean SST Anomaly (K)")
+plt.title("Annual Mean Sea Surface Temperature Anomaly")
+plt.legend()
+plt.grid(True)
+plt.savefig("sst_annual_trend.png", dpi=300, bbox_inches="tight")
+plt.show()
 
-# Print the 10 warmest years
-print("\nTop 10 warmest years:")
-print(warmest_years)
+# Seasonal pattern (mean anomaly per calendar month)
+monthly_mean = df.groupby("month")["sst_anomaly"].mean()
 
-# Print the 10 coldest years
-print("\nTop 10 coldest years:")
-print(coldest_years)
+print("\nMonthly mean SST anomalies:\n", monthly_mean)
 
-# Create a function to classify each year into a period
+warmest_month = monthly_mean.idxmax()
+coldest_month = monthly_mean.idxmin()
+
+print("\nMonth with the highest mean anomaly:", warmest_month)
+print("Month with the lowest mean anomaly:", coldest_month)
+
+# Plot 3: monthly anomaly with 12-month rolling mean
+# Smooths out month-to-month noise so the long-term trend is easier to see
+df["rolling_12m"] = df["sst_anomaly"].rolling(window=12).mean()
+
+plt.figure(figsize=(12, 6))
+plt.plot(df["date"], df["sst_anomaly"], label="Monthly SST anomaly", alpha=0.4)
+plt.plot(df["date"], df["rolling_12m"], label="12-month rolling mean")
+plt.axhline(0, linestyle="--", label="Zero anomaly")
+plt.xlabel("Date")
+plt.ylabel("SST Anomaly (K)")
+plt.title("SST Anomaly and 12-Month Rolling Mean")
+plt.legend()
+plt.grid(True)
+plt.savefig("sst_rolling_mean.png", dpi=300, bbox_inches="tight")
+plt.show()
+
+# Warmest/coldest years
+warmest_years = annual_mean.sort_values(ascending=False).head(10)
+coldest_years = annual_mean.sort_values(ascending=True).head(10)
+
+print("\nTop 10 warmest years:\n", warmest_years)
+print("\nTop 10 coldest years:\n", coldest_years)
+
+
+# Period comparison
+# Splits the dataset into decade-ish blocks so we can compare warming behavior across different eras
 def classify_period(year):
-
     if year <= 1999:
         return "1982-1999"
-
     elif year <= 2009:
         return "2000-2009"
-
     elif year <= 2019:
         return "2010-2019"
-
     else:
         return "2020-2024"
 
 
-# Create a new period column
 df["period"] = df["year"].apply(classify_period)
-
-# Calculate the mean anomaly for each period
 period_mean = df.groupby("period")["sst_anomaly"].mean()
-
-print("\nMean SST anomaly by period:")
-print(period_mean)
 
-# Count months with positive anomalies
-positive_months = (
-    df["sst_anomaly"] > 0
-).sum()
+print("\nMean SST anomaly by period:\n", period_mean)
 
-# Count months with negative anomalies
-negative_months = (
-    df["sst_anomaly"] < 0
-).sum()
+# Positive vs negative anomaly months
+positive_months = (df["sst_anomaly"] > 0).sum()
+negative_months = (df["sst_anomaly"] < 0).sum()
+zero_months = (df["sst_anomaly"] == 0).sum()
 
-# Count months with exactly zero anomaly
-zero_months = (
-    df["sst_anomaly"] == 0
-).sum()
-
 print("\nAnomaly classification:")
+print("Positive anomaly months:", positive_months)
+print("Negative anomaly months:", negative_months)
+print("Zero anomaly months:", zero_months)
 
-print(
-    "Positive anomaly months:",
-    positive_months
-)
+positive_percentage = positive_months / len(df) * 100
+negative_percentage = negative_months / len(df) * 100
 
-print(
-    "Negative anomaly months:",
-    negative_months
-)
+print("\nPercentage of positive anomalies:", positive_percentage, "%")
+print("Percentage of negative anomalies:", negative_percentage, "%")
 
-print(
-    "Zero anomaly months:",
-    zero_months
-)
-
-# Calculate the percentage of positive anomalies
-positive_percentage = (
-    positive_months / len(df) * 100
-)
-
-# Calculate the percentage of negative anomalies
-negative_percentage = (
-    negative_months / len(df) * 100
-)
-
-print(
-    "\nPercentage of positive anomalies:",
-    positive_percentage,
-    "%"
-)
-
-print(
-    "Percentage of negative anomalies:",
-    negative_percentage,
-    "%"
-)
-
-# Create an empty dictionary to store the results
+# Trend within each period
+# Fits a separate regression per period to check if warming has accelerated or slowed compared to other eras
 period_trends = {}
-
-# Loop through each period
 for period in df["period"].unique():
-
-    # Select the data for this period
-    period_data = df[
-        df["period"] == period
-    ]
-
-    # Calculate the linear regression
-    regression = linregress(
-        period_data["year"],
-        period_data["sst_anomaly"]
-    )
-
-    # Store the slope
+    period_data = df[df["period"] == period]
+    regression = linregress(period_data["year"], period_data["sst_anomaly"])
     period_trends[period] = regression.slope
-
+
 print("\nSST anomaly trend by period:")
-
 for period, slope in period_trends.items():
+    print(period, ":", slope, "K/year")
 
-    print(
-        period,
-        ":",
-        slope,
-        "K/year"
-    )
-
-# Create a summary table with important statistics
+# Summary table
 summary = pd.DataFrame({
     "Statistic": [
         "Mean anomaly",
@@ -419,7 +165,6 @@ summary = pd.DataFrame({
         "R-squared",
         "P-value"
     ],
-
     "Value": [
         mean_anomaly,
         max_anomaly,
@@ -430,31 +175,12 @@ summary = pd.DataFrame({
     ]
 })
 
-# Print the summary table
-print("\nSummary of the SST analysis:")
-print(summary)
+print("\nSummary of the SST analysis:\n", summary)
 
-# Save the annual mean anomalies
-annual_mean.to_csv(
-    "annual_sst_anomalies.csv"
-)
+# Export results
+annual_mean.to_csv("annual_sst_anomalies.csv")
+monthly_mean.to_csv("monthly_sst_anomalies.csv")
+period_mean.to_csv("period_sst_anomalies.csv")
+summary.to_csv("sst_summary.csv", index=False)
 
-# Save the monthly mean anomalies
-monthly_mean.to_csv(
-    "monthly_sst_anomalies.csv"
-)
-
-# Save the period means
-period_mean.to_csv(
-    "period_sst_anomalies.csv"
-)
-
-# Save the summary table
-summary.to_csv(
-    "sst_summary.csv",
-    index=False
-)
-
-# Print confirmation
 print("\nAnalysis results exported successfully.")
-
