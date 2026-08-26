@@ -1,8 +1,6 @@
-# <h1 align="center">**Sea Surface Temperature Anomaly Analysis**</h1> 
+# <h1 align="center">**Sea Surface Temperature Anomaly Analysis**</h1>
 
-<p align="justify"> This project presents a Python-based analysis of Sea Surface Temperature (SST) anomaly data from 1982 to 2024. The analysis investigates changes over time, long-term trends, seasonal patterns, and differences between the periods analyzed.</p>
-
-<p align="justify">Developed as an introductory project in oceanographic data analysis, the study uses Python to analyze a real scientific dataset, including data preparation, exploratory analysis, statistical analysis, time-series analysis, and data visualization.</p>
+<p align="justify">This is my first oceanographic data analysis project, built with Python. I used a real dataset of monthly Sea Surface Temperature (SST) anomalies from 1982 to 2024 to practice data cleaning, exploratory analysis, statistics, and visualization on an actual scientific problem instead of a toy dataset.</p>
 
 **Development environment:** Visual Studio Code (VS Code)
 
@@ -10,9 +8,9 @@
 
 **Next stage:** SQL and Power BI
 
-## Objective
+## Why This Dataset
 
-<p align="justify">The objective of this project is to investigate how Sea Surface Temperature anomalies changed between 1982 and 2024 and apply a reproducible data analysis process to an oceanographic dataset.</p>
+<p align="justify">I wanted a subject connected to my interest in oceanography, and SST anomaly data is a good fit: it's widely used in climate science, has a long historical record, and is simple enough to interpret with basic statistics while still requiring real handling of time-series data.</p>
 
 The analysis addresses the following questions:
 
@@ -54,7 +52,7 @@ The analysis addresses the following questions:
 ## Dataset
 
 <p align="justify">
-The dataset contains monthly Sea Surface Temperature anomaly observations from 1982 to 2024. The data were obtained from the Copernicus Marine Service Ocean Climate Portal.
+Monthly Sea Surface Temperature anomaly observations from 1982 to 2024, sourced from the Copernicus Marine Service Ocean Climate Portal.
 </p>
 
 [Source: Copernicus Marine Service — Sea Surface Temperature](https://marine.copernicus.eu/ocean-climate-portal/sea-surface-temperature)
@@ -86,48 +84,48 @@ The dataset contains monthly Sea Surface Temperature anomaly observations from 1
   </tr>
   <tr>
     <td><code>period</code></td>
-    <td>Predefined time period</td>
+    <td>Time period bucket</td>
   </tr>
 </table>
 
-## Methodology
+## What I Did
 
 **Data Preparation**
 
 <p align="justify">
-The original dataset was loaded with Pandas and prepared for analysis. The date variable was converted to datetime format, from which year and month were extracted. The dataset structure, data types, and missing values were also checked before the analysis.
+Loaded the dataset with Pandas, cleaned up column names, converted the date column to datetime, and extracted year and month. Checked shape, data types, and missing values before moving on to the analysis.
 </p>
 
-**Annual Analysis**
+**Annual Trend**
 
 <p align="justify">
-Monthly observations were aggregated by year to calculate the annual mean SST anomaly. These annual values were subsequently used to identify the years with the highest and lowest mean anomalies and to estimate the long-term trend.
+Aggregated the monthly observations into annual means, then used these values to identify the years with the highest and lowest mean anomalies and to estimate the long-term trend.
 </p>
 
 **Trend Analysis**
 
 <p align="justify">
-A linear regression was performed on the annual mean SST anomalies using <code>scipy.stats.linregress</code>. The regression provides the estimated trend together with R² and p-value, allowing the statistical relationship between year and SST anomaly to be evaluated.
+Ran a linear regression on the annual mean SST anomalies using <code>scipy.stats.linregress</code>, including R² and p-value, to check whether SST anomaly is trending up over time and how strong that relationship is.
 </p>
 
-**Monthly Analysis**
+**Monthly / Seasonal Pattern**
 
 <p align="justify">
-The data were grouped by calendar month to examine monthly patterns in SST anomalies. Monthly observations were also classified according to their anomaly sign as positive, negative, or zero.
+Grouped the data by calendar month to check if certain months run consistently warmer or colder. Also classified each monthly observation by anomaly sign (positive, negative, or zero).
 </p>
 
 **Rolling Mean**
 
 <p align="justify">
-A 12-month rolling mean was calculated to reduce short-term variability and provide a clearer representation of longer-term changes in the time series.
+Calculated a 12-month rolling mean to smooth out short-term noise and make the long-term trend easier to see.
 </p>
 
 **Period Comparison**
 
 <p align="justify">
-The dataset was divided into four predefined periods. The mean SST anomaly was calculated for each period to facilitate comparison across different stages of the dataset.
-
+Split the dataset into four predefined periods and compared the mean SST anomaly and trend slope across each.
 </p>
+
 <table align="center">
   <tr>
     <th>Period</th>
@@ -156,7 +154,7 @@ The dataset was divided into four predefined periods. The mean SST anomaly was c
 **Monthly SST Anomaly**
 
 <p align="justify">
-Monthly SST anomaly observations from 1982 to 2024.
+Full monthly SST anomaly time series, 1982 to 2024.
 </p>
 
 <p align="center">
@@ -166,7 +164,7 @@ Monthly SST anomaly observations from 1982 to 2024.
 **Annual SST Trend**
 
 <p align="justify">
-Annual mean SST anomalies and the estimated linear regression trend.
+Annual mean SST anomalies plotted against the fitted linear regression trend.
 </p>
 
 <p align="center">
@@ -176,7 +174,7 @@ Annual mean SST anomalies and the estimated linear regression trend.
 **12-Month Rolling Mean**
 
 <p align="justify">
-Monthly SST anomalies together with the 12-month rolling mean.
+Raw monthly SST anomalies together with the 12-month rolling mean.
 </p>
 
 <p align="center">
@@ -185,9 +183,9 @@ Monthly SST anomalies together with the 12-month rolling mean.
 
 ## Results
 
-<p align="justify">The main statistical results are stored in <code>sst_summary.csv</code>. The analysis includes the estimated long-term trend, R², p-value, highest and lowest annual mean anomalies, the 10 years with the highest and lowest annual means, and the mean anomaly for each predefined period.</p>
+<p align="justify">The main numbers — trend slope, R², p-value, highest and lowest annual mean anomalies, the 10 warmest and coldest years, and the mean anomaly per period — are saved in <code>sst_summary.csv</code>.</p>
 
-<p align="justify">The generated CSV files allow the results to be reused in the next stages of the project, including SQL and Power BI.</p>
+<p align="justify">All generated CSV files are meant to be reused in the next stage of this project, when I move parts of the analysis into SQL and Power BI.</p>
 
 ## Output Files
 
@@ -206,7 +204,7 @@ Monthly SST anomalies together with the 12-month rolling mean.
   </tr>
   <tr>
     <td align="center"><code>period_sst_anomalies.csv</code></td>
-    <td align="center">Mean anomaly by predefined period</td>
+    <td align="center">Mean anomaly by period</td>
   </tr>
   <tr>
     <td align="center"><code>sst_summary.csv</code></td>
@@ -214,30 +212,22 @@ Monthly SST anomalies together with the 12-month rolling mean.
   </tr>
 </table>
 
-## Scientific Context
+## Notes
 
 <p align="justify">
-Sea Surface Temperature (SST) is an important variable in oceanography and climate science. SST anomalies represent the difference between the observed temperature and a reference value and are used to identify changes in ocean conditions and climate variability.
-</p>
-
-<p align="justify">
-Understanding how SST anomalies vary over time can therefore provide insight into long-term changes in ocean conditions and their potential environmental implications. This project focuses on analyzing the temporal patterns and characteristics of SST anomalies between 1982 and 2024, including their long-term trend, annual and monthly variability, and differences between selected periods.
-</p>
-
-<p align="justify">
-The project aims to describe the patterns identified in the data without directly investigating their causes or their impacts on the environment.
+This is a beginner project — the goal was to practice the full workflow (cleaning → analysis → visualization → export) on a real dataset, not to draw scientific conclusions about climate causes. I focused on describing the patterns in the data rather than explaining what's driving them.
 </p>
 
 ## Tools
 
 **Programming and Development**
 - Python
-- Visual Studio Code (VS Code) 
+- Visual Studio Code (VS Code)
 
 **Python Libraries**
-- Pandas 
-- Matplotlib 
-- SciPy 
+- Pandas
+- Matplotlib
+- SciPy
 
 ## Skills Demonstrated
 
