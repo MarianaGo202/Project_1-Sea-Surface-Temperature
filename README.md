@@ -215,8 +215,11 @@ Raw monthly SST anomalies together with the 12-month rolling mean.
 ## Notes
 
 <p align="justify">
-This is a beginner project — the goal was to practice the full workflow (cleaning → analysis → visualization → export) on a real dataset, not to draw scientific conclusions about climate causes. I focused on describing the patterns in the data rather than explaining what's driving them.
+Sea Surface Temperature is one of the key variables used in oceanography and climate science. An SST anomaly is the difference between the observed temperature and a reference average, and tracking it over time is a common way to study changes in ocean conditions and climate variability. Monitoring these anomalies matters because they're linked to broader effects on marine ecosystems, weather patterns, and coastal communities, which is part of why this kind of data is worth analyzing in the first place.
 </p>
+
+<p align="justify">
+This is a beginner project, though — the goal was to practice the full workflow (cleaning, analysis, visualization, then export) on a real scientific dataset, not to draw conclusions about what's causing the changes, analyze their environmental impact, or propose solutions.</p>
 
 ## Tools
 
