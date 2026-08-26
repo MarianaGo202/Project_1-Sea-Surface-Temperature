@@ -219,7 +219,7 @@ Sea Surface Temperature is one of the key variables used in oceanography and cli
 </p>
 
 <p align="justify">
-This is a beginner project, though — the goal was to practice the full workflow (cleaning, analysis, visualization, then export) on a real scientific dataset, not to draw conclusions about what's causing the changes, analyze their environmental impact, or propose solutions.</p>
+This is a beginner project, though — the goal was to practice the full workflow (cleaning, analysis, visualization, export) on a real scientific dataset, not to draw conclusions about what's causing the changes, analyze their environmental impact, or propose solutions.</p>
 
 ## Tools
 
