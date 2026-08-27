@@ -158,7 +158,7 @@ Full monthly SST anomaly time series, 1982 to 2024.
 </p>
 
 <p align="center">
-  <img src="sst_monthly_anomaly.png" alt="Monthly SST Anomaly" width="800">
+  <img src="results/png/sst_monthly_anomaly.png" alt="Monthly SST Anomaly" width="800">
 </p>
 
 **Annual SST Trend**
@@ -168,7 +168,7 @@ Annual mean SST anomalies plotted against the fitted linear regression trend.
 </p>
 
 <p align="center">
-  <img src="sst_annual_trend.png" alt="Annual SST Trend" width="800">
+  <img src="results/png/sst_annual_trend.png" alt="Annual SST Trend" width="800">
 </p>
 
 **12-Month Rolling Mean**
@@ -178,7 +178,7 @@ Raw monthly SST anomalies together with the 12-month rolling mean.
 </p>
 
 <p align="center">
-  <img src="sst_rolling_mean.png" alt="12-Month Rolling Mean" width="800">
+  <img src="results/png/sst_rolling_mean.png" alt="12-Month Rolling Mean" width="800">
 </p>
 
 ## Results
