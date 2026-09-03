@@ -110,6 +110,13 @@ Aggregated the monthly observations into annual means, then used these values to
 Ran a linear regression on the annual mean SST anomalies using <code>scipy.stats.linregress</code>, including R² and p-value, to check whether SST anomaly is trending up over time and how strong that relationship is. The slope gives the average rate of change per year, while R² and the p-value indicate how much of the year-to-year variation that trend line actually explains versus how much is noise.
 </p>
 
+```python
+annual_mean = df.groupby("year")["sst_anomaly"].mean()
+
+trend = linregress(annual_mean.index, annual_mean.values)
+total_change = trend.slope * (annual_mean.index.max() - annual_mean.index.min())
+```
+
 **Monthly / Seasonal Pattern**
 
 <p align="justify">
@@ -160,7 +167,7 @@ Full monthly SST anomaly time series, 1982 to 2024.
 </p>
 
 <p align="center">
-  <img src="results/png/sst_monthly_anomaly.png" alt="Monthly SST Anomaly" width="800">
+  <img src="outputs/figures/sst_monthly_anomaly.png" alt="Monthly SST Anomaly" width="800">
 </p>
 
 **Annual SST Trend**
@@ -170,7 +177,7 @@ Annual mean SST anomalies plotted against the fitted linear regression trend.
 </p>
 
 <p align="center">
-  <img src="results/png/sst_annual_trend.png" alt="Annual SST Trend" width="800">
+  <img src="outputs/figures/sst_annual_trend.png" alt="Annual SST Trend" width="800">
 </p>
 
 **12-Month Rolling Mean**
@@ -180,12 +187,12 @@ Raw monthly SST anomalies together with the 12-month rolling mean.
 </p>
 
 <p align="center">
-  <img src="results/png/sst_rolling_mean.png" alt="12-Month Rolling Mean" width="800">
+  <img src="outputs/figures/sst_rolling_mean.png" alt="12-Month Rolling Mean" width="800">
 </p>
 
 ## Results
 
-<p align="justify">The main numbers — trend slope, R², p-value, highest and lowest annual mean anomalies, the 10 warmest and coldest years, and the mean anomaly per period — are saved in <code>sst_summary.csv</code>, so the key findings from the analysis don't just live in a notebook output but can be pulled up and reused on their own.</p>
+<p align="justify">The main numbers — trend slope, R², p-value, highest and lowest annual mean anomalies, the 10 warmest and coldest years, and the mean anomaly per period — are saved in <code>outputs/tables/sst_summary.csv</code>, so the key findings from the analysis don't just live in a notebook output but can be pulled up and reused on their own.</p>
 
 <p align="justify">All generated CSV files are meant to be reused in the next stage of this project, when I move parts of the analysis into SQL and Power BI.</p>
 
@@ -197,19 +204,19 @@ Raw monthly SST anomalies together with the 12-month rolling mean.
     <th align="center">Description</th>
   </tr>
   <tr>
-    <td align="center"><code>annual_sst_anomalies.csv</code></td>
+    <td align="center"><code>outputs/tables/annual_sst_anomalies.csv</code></td>
     <td align="center">Annual mean SST anomalies</td>
   </tr>
   <tr>
-    <td align="center"><code>monthly_sst_anomalies.csv</code></td>
+    <td align="center"><code>outputs/tables/monthly_sst_anomalies.csv</code></td>
     <td align="center">Mean anomaly by calendar month</td>
   </tr>
   <tr>
-    <td align="center"><code>period_sst_anomalies.csv</code></td>
+    <td align="center"><code>outputs/tables/period_sst_anomalies.csv</code></td>
     <td align="center">Mean anomaly by period</td>
   </tr>
   <tr>
-    <td align="center"><code>sst_summary.csv</code></td>
+    <td align="center"><code>outputs/tables/sst_summary.csv</code></td>
     <td align="center">Main statistical results</td>
   </tr>
 </table>
