@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from scipy.stats import linregress
 
 # Paths
-INPUT_CSV = "CSVExport.csv"
+INPUT_CSV = "sst_anomaly_1982_2024.csv"
 FIGURES_DIR = "outputs/figures"
 TABLES_DIR = "outputs/tables"
 
